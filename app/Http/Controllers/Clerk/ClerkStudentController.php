@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Clerk;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ClerkController extends Controller
+class ClerkStudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.clerk.index');
+        return view('clerk.students.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class ClerkController extends Controller
      */
     public function create()
     {
-        return view('admin.clerk.create');
+        //
     }
 
     /**
@@ -36,7 +36,7 @@ class ClerkController extends Controller
      */
     public function show(string $id)
     {
-        return view('admin.clerk.show');
+        return view('clerk.students.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class ClerkController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.clerk.edit');
+        //
     }
 
     /**

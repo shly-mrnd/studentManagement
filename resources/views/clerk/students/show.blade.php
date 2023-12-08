@@ -89,7 +89,7 @@
                 <div class="card-footer ">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <a href="{{route('admin.students.edit', 2)}}" type="submit" class="btn btn-lg btn-info">{{ __('Edit') }}</a>
+                            <a href="{{route('clerk.students.index')}}" type="submit" class="btn btn-lg btn-warning">{{ __('Back') }}</a>
                         </div>
                     </div>
                 </div>

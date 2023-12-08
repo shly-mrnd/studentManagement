@@ -1846,7 +1846,7 @@ Copyright (c) 2015 Daniel Eden
   .form-control {
     background-color: #FFFFFF;
     border: 1px solid #DDDDDD;
-    border-radius: 4px;
+    border-radius: 10px;
     color: #66615b;
     line-height: normal;
     font-size: 14px;
@@ -2325,7 +2325,7 @@ Copyright (c) 2015 Daniel Eden
     padding: 0;
     font-size: inherit;
     line-height: 0;
-    border-radius: 0;
+    border-radius: 10px;
   }
 
   .form-horizontal .col-form-label,
@@ -2409,8 +2409,8 @@ Copyright (c) 2015 Daniel Eden
   .h4 {
     font-size: 1.714em;
     line-height: 1.45em;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    /* margin-top: 30px; */
+    margin-bottom: 20px;
   }
 
   h4+.category,
@@ -2424,7 +2424,7 @@ Copyright (c) 2015 Daniel Eden
   .h5 {
     font-size: 1.57em;
     line-height: 1.4em;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
   }
 
   h6,
@@ -2435,6 +2435,7 @@ Copyright (c) 2015 Daniel Eden
   }
 
   p.description {
+
     font-size: 1.50em;
   }
 
@@ -2501,7 +2502,7 @@ Copyright (c) 2015 Daniel Eden
   .text-primary,
   a.text-primary:focus,
   a.text-primary:hover {
-    color: #51cbce !important;
+    color: #3081D0 !important;
   }
 
   .text-info,
@@ -2549,8 +2550,8 @@ Copyright (c) 2015 Daniel Eden
   }
 
   .blockquote.blockquote-primary {
-    border-color: #51cbce;
-    color: #51cbce;
+    border-color: #51bcda;
+    color: #000;
   }
 
   .blockquote.blockquote-primary small {
@@ -3215,15 +3216,16 @@ Copyright (c) 2015 Daniel Eden
   }
 
   .bg-default {
-    background-color: #66615B !important;
+    background-color: #39A7FF !important;
   }
 
   .bg-primary {
-    background-color: #51cbce !important;
+    background-color: #001B79 !important;
   }
 
   .bg-info {
-    background-color: #51bcda !important;
+    /* background-color: #51bcda !important; */
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%) !important;
   }
 
   .bg-success {
@@ -3235,7 +3237,8 @@ Copyright (c) 2015 Daniel Eden
   }
 
   .bg-warning {
-    background-color: #fbc658 !important;
+    /* background-color: #fbc658 !important; */
+    background: linear-gradient(180deg, rgba(255,252,158,1) 0%, rgba(214,209,129,1) 47%, rgba(236,237,82,1) 100%) !important;
   }
 
   .bg-white {
@@ -5606,6 +5609,8 @@ Copyright (c) 2015 Daniel Eden
     padding: 15px 15px 10px 15px;
   }
 
+
+
   .card .card-body.table-full-width {
     padding-left: 0;
     padding-right: 0;
@@ -5662,13 +5667,13 @@ Copyright (c) 2015 Daniel Eden
 
   .card .image {
     overflow: hidden;
-    height: 200px;
+    height: 80px;
     position: relative;
   }
 
   .card .avatar {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     overflow: hidden;
     border-radius: 50%;
     margin-bottom: 15px;
@@ -5686,9 +5691,9 @@ Copyright (c) 2015 Daniel Eden
   }
 
   .card label {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 5px;
-    color: #9A9A9A;
+    color: #000;
   }
 
   .card .card-footer {
@@ -5805,8 +5810,8 @@ Copyright (c) 2015 Daniel Eden
   }
 
   .card-user .avatar {
-    width: 124px;
-    height: 124px;
+    width: 80px;
+    height: 80px;
     border: 1px solid #FFFFFF;
     position: relative;
   }

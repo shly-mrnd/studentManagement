@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Clerk Information'])
+@extends('layouts.app', ['title' => 'Clerk Profile'])
 
 @section('content')
 
@@ -11,11 +11,11 @@
                 <a href="#">
                     <img class="avatar border-gray" src="/src/user.png" alt="...">
 
-                    <h5 class="title">Isa Molde</h5>
+                    <h5 class="title">Admin Admin</h5>
                 </a>
                 <p class="description">
                     <!--Position-->
-                    Clerk 1
+                    Admin 1
                 </p>
             </div>
 
@@ -42,15 +42,6 @@
                             <small>{{ __('Spent') }}</small>
                         </h5>
                     </div> --}}
-                </div>
-            </div>
-        </div>
-        <div class="card-footer p-4">
-            <div class="button-container">
-                <div class="d-flex justify-content-end">
-                    <div class="text-center">
-                        <a href="{{route('admin.clerk.index')}}" type="submit" class="btn btn-danger">{{ __('Back') }}</a>
-                    </div>
                 </div>
             </div>
         </div>

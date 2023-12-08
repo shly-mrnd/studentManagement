@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Edit Student Profile'])
+@extends('layouts.app', ['title' => 'Edit Profile'])
 
 @section('content')
 
@@ -11,123 +11,88 @@
                             <h3 class="title">{{ __('Edit Profile') }}</h3>
                         </div>
                         <div class="card-body">
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Student ID') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <input type="text" name="studentId" class="form-control" placeholder="Student ID" value="" required>
                                     </div>
-                                    @if ($errors->has('studentId'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('studentId') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Name') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control" placeholder="Name" value="" required>
                                     </div>
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Program') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <input type="text" name="prog" class="form-control" placeholder="Program" value="" required>
                                     </div>
-                                    @if ($errors->has('prog'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('prog') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Email') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <input type="email" name="email" class="form-control" placeholder="Email" value="" required>
                                     </div>
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Phone Number') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <input type="text" name="yrlvl" class="form-control" placeholder="Phone Number" value="" required>
+                                        <input type="text" name="phoneNum" class="form-control" placeholder="Phone Number" value="" required>
                                     </div>
-                                    @if ($errors->has('yrlvl'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('yrlvl') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Address') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Address" value="" required>
+                                        <input type="text" name="address" class="form-control" placeholder="Address" value="" required>
                                     </div>
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Date of Birth') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Date of Birth" value="" required>
+                                        <input type="text" name="dob" class="form-control" placeholder="Date of Birth" value="" required>
                                     </div>
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Contact in case of emergency') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Name of Contact" value="" required>
+                                        <input type="text" name="contac" class="form-control" placeholder="Name of Contact" value="" required>
                                     </div>
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Contact Number') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Contact Number" value="" required>
+                                        <input type="text" name="contactNum" class="form-control" placeholder="Contact Number" value="" required>
                                     </div>
-                                    @if ($errors->has('phone'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
+
                         </div>
                         <div class="card-footer ">
                             <div class="row">
@@ -135,7 +100,7 @@
                                     <button type="submit" class="btn btn-info">{{ __('Save Changes') }}</button>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <a href="{{route('admin.students.show', 2)}}" type="submit" class="btn btn-warning">{{ __('Cancel') }}</a>
+                                    <a href="{{route('student.profile.show', 2)}}" type="submit" class="btn btn-warning">{{ __('Cancel') }}</a>
                                 </div>
                             </div>
                         </div>

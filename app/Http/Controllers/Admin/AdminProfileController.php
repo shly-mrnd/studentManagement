@@ -12,7 +12,7 @@ class AdminProfileController extends Controller
      */
     public function index()
     {
-            return view('admin.profile.show');
+
     }
 
     /**
@@ -36,7 +36,7 @@ class AdminProfileController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('admin.profile.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class AdminProfileController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.profile.edit');
     }
 
     /**

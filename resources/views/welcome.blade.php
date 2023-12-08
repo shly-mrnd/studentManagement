@@ -4,12 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
         <title>{{ $title ?? 'Student Management System'}}</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        {{-- <link rel="stylesheet" href="{{asset('css/student-manage.css')}}"> --}}
+        <link rel="stylesheet" href="{{asset('css/student-manage.css')}}">
 
     </head>
     <body class="position-absolute top-50 start-50 translate-middle">
@@ -30,16 +32,16 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 mr-auto">
+                <div class="col-md-6 mr-auto">
                   <div class="card card-signup text-center">
                     <div class="bg-light">
                         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
                             <li class="nav-item" role="presentation">
-                              <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="" role="tab"
+                              <a class="nav-link {{Route::currentRouteName() == 'login' ? 'active' : ' '}}" id="tab-login" data-mdb-toggle="pill" href="" role="tab"
                                 aria-controls="pills-login" aria-selected="true">Login</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                              <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="" role="tab"
+                              <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="{{route('auth.register')}}" role="tab"
                                 aria-controls="pills-register" aria-selected="false">Register</a>
                             </li>
                           </ul>
@@ -48,9 +50,9 @@
                       <form method="POST" action="">
                         @csrf
                         <!--Begin input email -->
-                        <div class="form-outline mb-8">
+                        <div class="form-outline mb-4">
                             <input type="email" id="emailAd" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" />
-                            <label class="col-form-label text-md-end" for="emailAd">{{ __('Email Address') }}</label>
+                            <label class="col-form-label" for="emailAd">{{ __('Email Address') }}</label>
                           </div>
 
                         <!--Begin input password -->
@@ -58,16 +60,8 @@
                             <input type="password" id="pass" class="form-control form-control-lg @error('pass') is-invalid @enderror" name="pass" value="{{ old('pass') }}" />
                             <label class="col-form-label text-md-end" for="pass">{{ __('Password') }}</label>
                           </div>
-                        <!--Begin input user type-->
 
-                        <div class="form-check text-left">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <span class="form-check-sign"></span>
-                            {{ __('Remember Me') }}
-                          </label>
-                        </div>
-                        <a class="form-check" href="">Forgot password?</a>
+
                         <div class="pt-4">
                             <button type="submit" class="btn btn-primary w-100 ">{{ __('LOGIN') }}</button>
                         </div>

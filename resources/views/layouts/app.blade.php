@@ -7,6 +7,9 @@
 
     <title>{{ $title ?? 'Student Management System'}}</title>
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/student-manage.css')}}">
