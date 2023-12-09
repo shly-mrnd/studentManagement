@@ -19,67 +19,36 @@
                             <table class="table">
                                 <thead class="text-center">
                                     <th>
-                                        No
-                                    </th>
-                                    <th>
                                         Name
-                                    </th>
-                                    <th>
-                                        Position
                                     </th>
                                     <th>
                                         Email
                                     </th>
                                     <th>
-                                        Username
+                                        Phone Number
                                     </th>
                                     <th>
                                         Action
                                     </th>
                                 </thead>
                                 <tbody class="text-center">
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Molde, Isa
-                                        </td>
-                                        <td>
-                                            Clerk 1
-                                        </td>
-                                        <td>
-                                            isamolde@gmail.com
-                                        </td>
-                                        <td>
-                                            Dean-Clerk
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.clerk.show', 4)}}" class="btn btn-sm btn-success">View Details</a>
-                                            <a href="{{route('admin.clerk.edit', 4)}}" class="btn btn-sm btn-info">Edit Account</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Isa Molde
-                                        </td>
-                                        <td>
-                                            Clerk 1
-                                        </td>
-                                        <td>
-                                            isamolde@gmail.com
-                                        </td>
-                                        <td>
-                                            Dean-Clerk
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.clerk.show', 4)}}" class="btn btn-sm btn-success">View Details</a>
-                                            <a href="{{route('admin.clerk.edit', 4)}}" class="btn btn-sm btn-info">Edit Account</a>
-                                        </td>
-                                    </tr>
+                                    @foreach ( $users as $user )
+                                        <tr>
+                                            <td>
+                                                {{$user->name}}
+                                            </td>
+                                            <td>
+                                                {{$user->email}}
+                                            </td>
+                                            <td>
+                                                {{$user->phone_number}}
+                                            </td>
+                                            <td>
+                                                <a href="{{route('admin.clerk.show', ['clerk' => $user->id])}}" class="btn btn-sm btn-success">View Details</a>
+                                                <a href="{{route('admin.clerk.edit', ['clerk' => $user->id])}}" class="btn btn-sm btn-info">Edit Account</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

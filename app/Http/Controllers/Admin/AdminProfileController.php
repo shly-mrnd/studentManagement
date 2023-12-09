@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use App\Models\User;
 
 class AdminProfileController extends Controller
 {
@@ -12,7 +15,8 @@ class AdminProfileController extends Controller
      */
     public function index()
     {
-
+        $user = User::where('id', Auth::user()->id)->first();
+        return view('admin.profile.index', ['user' => $user]);
     }
 
     /**
@@ -36,7 +40,9 @@ class AdminProfileController extends Controller
      */
     public function show(string $id)
     {
-        return view('admin.profile.show');
+        if ($id != Auth::user()->id) {
+            return back();
+        }
     }
 
     /**
@@ -44,7 +50,11 @@ class AdminProfileController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.profile.edit');
+        if ($id != Auth::user()->id) {
+            return back();
+        }
+        $user = User::where('id', $id)->first();
+        return view('admin.profile.edit', ['user' => $user]);
     }
 
     /**
@@ -52,7 +62,43 @@ class AdminProfileController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if($id != Auth::user()->id) {
+            return back();
+        }
+        $query = '';
+
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'program' => ['required'],
+            'email' => ['required', 'email'],
+            'address' => ['required', 'string'],
+            'phone_number' => ['required', 'max:11'],
+            'username' => ['required', 'string'],
+        ]);
+
+        $name = $validated['name'];
+        $program = $validated['program'];
+        $email = $validated['email'];
+        $address = $validated['address'];
+        $phone_number = $validated['phone_number'];
+        $username = $validated['username'];
+
+        $query = User::where('id', $id)
+            ->update([
+                'name' => $name,
+                'program' => $program,
+                'address' => $address,
+                'phone_number' => $phone_number,
+                'email' => $email,
+                'username' => $username,
+            ]);
+
+        if ($query) {
+            return redirect()->route('admin.profile.index');
+        } else {
+            return back();
+        }
+
     }
 
     /**

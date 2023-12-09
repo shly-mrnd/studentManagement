@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class StudentController extends Controller
 {
@@ -12,7 +14,11 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('admin.students.index');
+        $users = DB::table('users')
+        ->whereNot('program', 'CICT')
+        ->whereNot('program', 'none')
+        ->get();
+        return view('admin.students.index', ['users' => $users]);
     }
 
     /**
@@ -36,7 +42,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        return view('admin.students.show');
+        $user = User::where('id', $id)->first();
+        return view('admin.students.show',['user' => $user]);
     }
 
     /**
@@ -44,7 +51,7 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.students.edit');
+        //
     }
 
     /**
@@ -52,7 +59,20 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $query = "";
+        if ($request->action === 'approve') {
+            $query = User::where('id', $id)
+                ->update(['status' => 'approved']);
+            if ($query) {
+                return redirect()->route('admin.students.index');
+            }
+        } elseif ($request->action === 'decline') {
+            $query = User::where('id', $id)
+                ->update(['status' => 'declined']);
+            if ($query) {
+                return redirect()->route('admin.students.index');
+            }
+        }
     }
 
     /**

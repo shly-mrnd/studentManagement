@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Edit Student Profile'])
+{{-- @extends('layouts.app', ['title' => 'Edit Student Profile'])
 
 @section('content')
 
@@ -144,4 +144,4 @@
             </div>
         </div>
 
-@endsection
+@endsection --}}

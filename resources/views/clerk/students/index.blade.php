@@ -15,7 +15,7 @@
                             <table class="table">
                                 <thead class="text-center">
                                     <th>
-                                        No
+                                        Student ID
                                     </th>
                                     <th>
                                         Name
@@ -24,16 +24,7 @@
                                         Email
                                     </th>
                                     <th>
-                                        Year Level
-                                    </th>
-                                    <th>
                                         Program
-                                    </th>
-                                    <th>
-                                        Address
-                                    </th>
-                                    <th>
-                                        Phone Number
                                     </th>
                                     <th>
                                         View Student Details
@@ -43,68 +34,44 @@
                                     </th>
                                 </thead>
                                 <tbody class="text-center">
+                                    @foreach ( $users as $user )
                                     <tr>
                                         <td>
-                                            1
+                                            {{$user->student_id}}
                                         </td>
                                         <td>
-                                            Jezel Manlangit
+                                            {{$user->name}}
                                         </td>
                                         <td>
-                                            jezel@gmail.com
+                                            {{$user->email}}
+                                        </td>
+                                        @php
+                                        $program = '';
+                                        if ($user->program === 'BSIT') {
+                                            $program = 'BS in Information Technology';
+                                        } elseif ($user->program === 'BSIS') {
+                                            $program = 'BS in Information System';
+                                        } elseif ($user->program === 'BSCS') {
+                                            $program = 'BS in Computer Science';
+                                        }
+                                         @endphp
+                                        <td>
+                                            {{$program}}
                                         </td>
                                         <td>
-                                           4
+                                            <a href="{{route('clerk.students.show', ['student' => $user->id ])}}" class="btn btn-sm btn-success">View Details</a>
                                         </td>
                                         <td>
-                                            BSINFOTECH
-                                        </td>
-                                        <td>
-                                            Palnab del Norte
-                                        </td>
-                                        <td>
-                                            091234847
-                                        </td>
-                                        <td>
-                                            <a href="{{route('clerk.students.show', 2)}}" class="btn btn-sm btn-success">View Details</a>
-                                        </td>
-                                        <td>
-                                            <span class="text-warning">Pending</span>
-                                            {{-- <span class="text-danger">Decline</span>
-                                            <span class="text-success">Approved</span> --}}
+                                            @if($user->status === 'pending')
+                                            <span class="text-warning"><strong>Pending</strong></span>
+                                            @elseif ($user->status === 'declined')
+                                            <span class="text-danger"><strong>Declined</strong></span>
+                                            @elseif ($user->status === 'approved')
+                                            <span class="text-success"><strong>Approved</strong></span>
+                                            @endif
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Kim Vibal
-                                        </td>
-                                        <td>
-                                            kim@gmail.com
-                                        </td>
-                                        <td>
-                                           4
-                                        </td>
-                                        <td>
-                                            BSINFOTECH
-                                        </td>
-                                        <td>
-                                            Palnab del Norte
-                                        </td>
-                                        <td>
-                                            091234847
-                                        </td>
-                                        <td>
-                                            <a href="" class="btn btn-sm btn-success">View Details</a>
-                                        </td>
-                                        <td>
-                                            {{-- <span class="text-warning">Pending</span>
-                                            <span class="text-danger">Decline</span> --}}
-                                            <span class="text-success">Approved</span>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

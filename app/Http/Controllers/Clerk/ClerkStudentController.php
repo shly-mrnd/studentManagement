@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Clerk;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class ClerkStudentController extends Controller
 {
@@ -12,7 +14,11 @@ class ClerkStudentController extends Controller
      */
     public function index()
     {
-        return view('clerk.students.index');
+        $users = DB::table('users')
+        ->whereNot('program', 'CICT')
+        ->whereNot('program', 'none')
+        ->get();
+         return view('clerk.students.index', ['users' => $users]);
     }
 
     /**
@@ -36,7 +42,8 @@ class ClerkStudentController extends Controller
      */
     public function show(string $id)
     {
-        return view('clerk.students.show');
+        $user = User::where('id', $id)->first();
+        return view('clerk.students.show', ['user' => $user]);
     }
 
     /**
@@ -52,7 +59,20 @@ class ClerkStudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $query = "";
+        if ($request->action === 'approve') {
+            $query = User::where('id', $id)
+                ->update(['status' => 'approved']);
+            if ($query) {
+                return redirect()->route('clerk.students.index');
+            }
+        } elseif ($request->action === 'decline') {
+            $query = User::where('id', $id)
+                ->update(['status' => 'declined']);
+            if ($query) {
+                return redirect()->route('clerk.students.index');
+            }
+        }
     }
 
     /**

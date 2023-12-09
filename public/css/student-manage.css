@@ -1860,7 +1860,7 @@ Copyright (c) 2015 Daniel Eden
   }
 
   .form-control:focus {
-    border: 1px solid #9A9A9A;
+    border: 1px solid #1833cf;
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: 0 !important;
@@ -2922,6 +2922,7 @@ Copyright (c) 2015 Daniel Eden
   .form-check-radio input[type="radio"]:disabled+.form-check-sign::after {
     color: #9A9A9A;
   }
+
 
   .navbar {
     padding-top: 0.625rem;

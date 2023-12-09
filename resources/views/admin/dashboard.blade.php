@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead class=" text-primary">
+                                <thead class="text-center">
                                     <th>
                                         ID Number
                                     </th>
@@ -25,83 +25,29 @@
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            Dakota Rice
+                                @foreach ($students as $student)
+                                    <tr class="text-center">
+                                        <td class="fs-5">
+                                            {{$student->student_id}}
                                         </td>
-                                        <td>
-                                            Niger
+                                        <td class="fs-5">
+                                            {{$student->name}}
                                         </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
+                                        @php
+                                        $program = '';
+                                        if ($student->program === 'BSIT') {
+                                            $program = 'BS in Information Technology';
+                                        } elseif ($student->program === 'BSIS') {
+                                            $program = 'BS in Information System';
+                                        } elseif ($student->program === 'BSCS') {
+                                            $program = 'BS in Computer Science';
+                                        }
+                                        @endphp
+                                        <td class="fs-5">
+                                            {{$program}}
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Jon Porter
-                                        </td>
-                                        <td>
-                                            Portugal
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -118,95 +64,37 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID Number
-                                    </th>
+                                <thead class="text-center">
                                     <th>
                                         Name
                                     </th>
                                     <th>
-                                       Program
+                                        Username
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                       Phone Number
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            Dakota Rice
+                                @foreach ($clerks as $clerk)
+                                    <tr class="text-center">
+                                        <td class="fs-5">
+                                            {{$clerk->name}}
+                                        </td>
+                                        <td class="fs-5">
+                                           {{$clerk->username}}
                                         </td>
                                         <td>
-                                            Niger
+                                            {{$clerk->email}}
                                         </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
+                                        <td class="fs-5">
+                                            {{$clerk->phone_number}}
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Jon Porter
-                                        </td>
-                                        <td>
-                                            Portugal
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

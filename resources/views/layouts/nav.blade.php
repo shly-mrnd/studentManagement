@@ -43,10 +43,27 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">Logout</a>
-                    </li>
-                    <li class="separator d-lg-none"></li>
+                    <form method="POST" action="{{ route('auth.logout') }}">
+                        @csrf
+
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{route('auth.logout')}}"
+                            onclick="event.preventDefault; this.closest('form').submit();">{{ __('Logout') }}</a>
+                        </li>
+
+                        <li class="separator d-lg-none"></li>
+                    </form>
+                    {{-- <form action="{{route('auth.logout')}}" method="POST">
+                        @csrf
+
+                        <li class="nav-item">
+                            <a type="submit" class="nav-link" aria-current="page" href="{{route('auth.logout')}}"
+                            onclick="event.preventDefault; this.closest('form').submit();">{{ __('Logout') }}</a>
+                        </li>
+
+                        <li class="separator d-lg-none"></li>
+
+                    </form> --}}
                 </ul>
             </div>
         </div>
