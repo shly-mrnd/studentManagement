@@ -23,6 +23,9 @@
                                     <th>
                                        Program
                                     </th>
+                                    <th>
+                                        Email
+                                    </th>
                                 </thead>
                                 <tbody>
                                 @foreach ($students as $student)
@@ -45,6 +48,9 @@
                                         @endphp
                                         <td class="fs-5">
                                             {{$program}}
+                                        </td>
+                                        <td class="fs-5">
+                                            {{$student->email}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -87,7 +93,7 @@
                                         <td class="fs-5">
                                            {{$clerk->username}}
                                         </td>
-                                        <td>
+                                        <td class="fs-5">
                                             {{$clerk->email}}
                                         </td>
                                         <td class="fs-5">

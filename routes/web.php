@@ -13,6 +13,7 @@ use App\Http\Controllers\Clerk\ClerkStudentController;
 use App\Http\Controllers\Clerk\ClerkProfileController;
 use App\Http\Controllers\Clerk\HomeController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Student\PrintIdController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -105,7 +106,8 @@ Route::prefix('/auth')
             ->group(function() {
                 Route::resource('/profile', StudentProfileController::class);
             });
-
+        Route::get('/viewID', [PrintIdController::class, 'index'])->middleware(['auth'])->name('viewID');
+        Route::get('/printID', [PrintIdController::class, 'PrintID'])->middleware(['auth'])->name('printID');
         //Clerk
         Route::prefix('/clerk')
             ->name('clerk.')

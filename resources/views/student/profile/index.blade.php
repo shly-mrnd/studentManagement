@@ -92,7 +92,6 @@
                     <div class="card-footer p-4">
                         <div class="button-container">
                             <div class="d-flex justify-content-end">
-                                <span class="text-success"><strong>Approved</strong></span>
                                 @if (Auth::user()->status === 'pending')
                                 <div class="text-center">
                                     <a href="{{route('student.profile.edit', ['profile' => $user->id])}}" type="submit" class="btn btn-info">{{ __('Edit') }}</a>
@@ -101,6 +100,8 @@
                                 <div class="text-center">
                                     <a href="{{route('student.profile.edit', ['profile' => $user->id])}}" type="submit" class="btn btn-info">{{ __('Edit') }}</a>
                                 </div>
+                                @elseif (Auth::user()->status === 'approved')
+                                    <span class="text-success"><strong>Approved</strong></span>
                                 @endif
                             </div>
                         </div>
@@ -161,7 +162,7 @@
                         <div class="button-container">
                             <div class="d-flex justify-content-center">
                                 <div class="text-center">
-                                    <a href="" type="submit" class="btn btn-default w-100">{{ __('Print ID') }}</a>
+                                    <a href="{{Route('viewID')}}" type="submit" class="btn btn-default w-100">{{ __('View ID') }}</a>
                                 </div>
                             </div>
                         </div>
