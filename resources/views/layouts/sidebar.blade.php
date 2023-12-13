@@ -41,7 +41,33 @@
 
 {{-- student --}}
 @role('student')
-    @if (Auth::user()->status === 'pending')
+        <div class="sidebar" data-color="white" data-active-color="danger">
+            <div class="logo">
+                <a href="" class="simple-text logo-mini">
+                    <div class="logo-image-small">
+                        <img src="/src/cict-logo.png" alt="">
+                    </div>
+                </a>
+                <a href="" class="simple-text logo-normal">
+                    {{ __(auth()->user()->username) }}
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="">
+                        <a class="{{Route::currentRouteName() == 'main-dashboard' ? 'text-primary' : ' '}}" href="{{route('main-dashboard')}}">
+                            <p><strong>{{ __('Overview') }}</strong></p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a class="{{Route::currentRouteName() == 'student.profile.index' ? 'text-primary' : ' '}}" href="{{route('student.profile.index')}}">
+                            <p><strong>{{ __('Profile') }}</strong></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {{-- @if (Auth::user()->status === 'pending')
     <div class="sidebar" data-color="white" data-active-color="danger">
         <div class="logo">
             <a href="" class="simple-text logo-mini">
@@ -90,6 +116,36 @@
                 <li class="">
                     <a class="{{Route::currentRouteName() == 'student.profile.index' ? 'text-primary' : ' '}}" href="{{route('student.profile.index')}}">
                         <p><strong>{{ __('Profile') }}</strong></p>
+<<<<<<< HEAD
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @elseif (Auth::user()->status === 'declined')
+    <div class="sidebar" data-color="white" data-active-color="danger">
+        <div class="logo">
+            <a href="" class="simple-text logo-mini">
+                <div class="logo-image-small">
+                    <img src="/src/cict-logo.png" alt="">
+                </div>
+            </a>
+            <a href="" class="simple-text logo-normal">
+                {{ __(auth()->user()->username) }}
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="">
+                    <a class="{{Route::currentRouteName() == 'main-dashboard' ? 'text-primary' : ' '}}" href="{{route('main-dashboard')}}">
+                        <p><strong>{{ __('Overview') }}</strong></p>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="{{Route::currentRouteName() == 'student.profile.index' ? 'text-primary' : ' '}}" href="{{route('student.profile.index')}}">
+                        <p><strong>{{ __('Profile') }}</strong></p>
+=======
+>>>>>>> 35f02d8 (Updated UI)
                     </a>
                 </li>
             </ul>
@@ -122,7 +178,7 @@
             </ul>
         </div>
     </div>
-    @endif
+    @endif --}}
 @endrole
 
 

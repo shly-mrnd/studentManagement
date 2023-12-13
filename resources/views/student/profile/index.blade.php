@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3 text-center" style="max-width: 400px;">
+            <div class="col-md-4 text-center" style="max-width: 400px;">
                 <div class="d-flex flex-column align-items-center md-mt-0">
                     <div class="card shadow-lg rounded-lg">
                         <!--upper ID-->

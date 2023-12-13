@@ -1,3 +1,55 @@
+STUDENT MANAGEMENT SYSTEM
+A web-based Student Management System built with Laravel will facilitate the creation, reading, updating, and deletion (CRUD) of student records by authorized users. Within this system, administrators will hold the power to create accounts for clerks, who will then assume the responsibility of verifying student information before granting them permission to print their identification cards.
+======
+
+## Disclaimer
+This Student Management System is an educational project developed for demonstration and learning purposes only. It is not intended for commercial use or deployment in a real-world educational environment.
+
+## Features
+
+ * The system allows users to create, update, and delete student records, with the ability to create an initial admin account and enable the Clerk to verify student information before printing ID cards. 
+ * Students can create accounts and access and update their personal information. 
+ * The user interface is user-friendly, and the system also allows for verification before printing ID cards.
+ * A printable view is created for easy printing of student information.
+
+## How to utilize the student management system
+
+### Login Page
+
+* Enter your username and password based on your role (Admin, Clerk, or Student).
+* Click Login.
+
+### Register Page (For Student Only)
+
+* If you are a student and doesn't have an account yet, click register.
+* Enter your information and click register to verify and print your ID.
+
+### Overview Page
+
+* For Student, if your information is pending, it will prompt a notification to go to profile to edit your information.
+* For Clerk and Administration, the web app will welcome you for a succes login.
+
+### Administrator Functionality
+
+Adding Clerk Account
+* To add clerk account, go to clerk list and find the add button.
+* Click the add button and enter the account credentials of the clerk, then click Save.
+
+Verifying Student Information
+* Go to student list and view the details of the student, to approve the student's information, click approve otherwise click decline.
+
+### Clerk Functionality
+
+Verifying Student Information
+* Go to student list and view the details of the student, to approve the student's information, click approve otherwise click decline.
+
+### Student Functionality
+
+* Go to profile and edit your information, once the information is approved, you cannot edit it unless you will go to clerk and ask for modification of your details.
+* At the right side of the student profile, you can see the printable view for ID click print to print your ID.
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

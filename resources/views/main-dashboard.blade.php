@@ -15,7 +15,7 @@
                             <h3 class="fs-5 text-danger">Your status is currently pending. Please go to profile to edit your information.</h3>
                             <h3 class="fs-5">Thank You.</h3>
                         @elseif (Auth::user()->status === 'declined')
-                            <h3 class="fs-5">Your registration for profiling has been declined, please go to the faculty office for
+                            <h3 class="fs-5">Your registration for ID printing has been declined, please go to the faculty office for
                                 information as to why your registration has been declined.</h3>
                             <h3 class="fs-5">Thank You.</h3>
                         @endif
