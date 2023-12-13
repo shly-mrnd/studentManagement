@@ -1,6 +1,7 @@
 STUDENT MANAGEMENT SYSTEM
-A web-based Student Management System built with Laravel will facilitate the creation, reading, updating, and deletion (CRUD) of student records by authorized users. Within this system, administrators will hold the power to create accounts for clerks, who will then assume the responsibility of verifying student information before granting them permission to print their identification cards.
 ======
+
+A web-based Student Management System built with Laravel will facilitate the creation, reading, updating, and deletion (CRUD) of student records by authorized users. Within this system, administrators will hold the power to create accounts for clerks, who will then assume the responsibility of verifying student information before granting them permission to print their identification cards.
 
 ## Disclaimer
 This Student Management System is an educational project developed for demonstration and learning purposes only. It is not intended for commercial use or deployment in a real-world educational environment.
